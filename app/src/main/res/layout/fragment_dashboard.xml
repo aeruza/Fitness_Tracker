@@ -42,6 +42,7 @@
                 android:layout_height="80dp"
                 android:src="@drawable/pushup"
                 android:background="@color/white"
+                android:contentDescription="Push-Up"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -105,6 +106,7 @@
                 android:layout_height="80dp"
                 android:src="@drawable/squats"
                 android:background="@color/white"
+                android:contentDescription="Squats"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

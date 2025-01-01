@@ -1,11 +1,18 @@
 <resources>
+    <!--  Would be best to change style to utilise a css file / typestyling for better UI  -->
     <string name="app_name">Fitness Tracker</string>
     <string name="title_home">Home</string>
     <string name="title_tracker">Tracker</string>
-    <string name="title_stats">Stats</string>
+    <string name="title_stats">Statistics</string>
 
     <!--  Dashboard Resources  -->
     <string name="card_push_ups"><u>Push-Ups</u></string>
     <string name="card_squats"><u>Squats</u></string>
-    <string name="dashboard_title"><u><i>Dashboard</i></u></string>
+    <string name="dashboard_title">Dashboard</string>
+
+    <!-- Tracker Resources -->
+
+
+    <!-- Stats Resources -->
+
 </resources>

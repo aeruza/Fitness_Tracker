@@ -7,19 +7,11 @@
     android:layout_height="match_parent"
     tools:context=".ui.dashboard.DashboardFragment" >
 
-    <TextView
-        android:id="@+id/text_dashboard"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/dashboard_title"
-        style="@style/TextAppearance.MaterialComponents.Headline5"
-        app:layout_constraintStart_toStartOf="@id/dashboard_card_1"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-<!--    Can implement swipe the card to see the next granularity in the future
+    <!--    Can implement swipe the card to see the next granularity in the future
         - Where you can Swipe between Overall / Daily / Weekly / Monthly -->
 
+    <!--  Group 2 Side by Side Cards into a RecyclerViewObject then allow
+      Scrolling of the cards for future added exercises -->
     <androidx.cardview.widget.CardView
         android:id="@+id/dashboard_card_1"
         android:layout_width="0dp"
@@ -29,7 +21,7 @@
         app:cardCornerRadius="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/dashboard_card_2"
-        app:layout_constraintTop_toBottomOf="@id/text_dashboard">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:padding="12dp"
@@ -93,7 +85,7 @@
         app:cardCornerRadius="16dp"
         app:layout_constraintStart_toEndOf="@+id/dashboard_card_1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_dashboard">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:padding="12dp"

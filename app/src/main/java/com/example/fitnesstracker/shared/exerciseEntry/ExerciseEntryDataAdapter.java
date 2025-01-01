@@ -38,6 +38,7 @@ public class ExerciseEntryDataAdapter extends RecyclerView.Adapter<ExerciseEntry
     @Override
     public void onBindViewHolder(@NonNull ExerciseEntryDataViewHolder holder, int position) {
         ExerciseEntryData data = eData.get(position);
+        holder.date.setText(data.getDate());
         holder.index.setText(String.valueOf(data.getIndex()));
         holder.exerciseName.setText(data.getName());
         holder.total.setText(String.valueOf(data.getTotal()));

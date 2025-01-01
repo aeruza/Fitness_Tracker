@@ -16,12 +16,16 @@ import com.example.fitnesstracker.databinding.FragmentTrackerBinding;
 import com.example.fitnesstracker.shared.exerciseEntry.ExerciseEntryData;
 import com.example.fitnesstracker.shared.exerciseEntry.ExerciseEntryDataAdapter;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
 import java.util.Random;
 
 public class TrackerFragment extends Fragment {
 
     ArrayList<ExerciseEntryData> eData = new ArrayList<>();
+    String date = new SimpleDateFormat("dd-MM-yyyy, hh:mm", Locale.getDefault()).format(new Date());
 
     private FragmentTrackerBinding binding;
 
@@ -36,8 +40,7 @@ public class TrackerFragment extends Fragment {
         Random rand = new Random();
         int i;
         for(i = 0; i < 10; i++) {
-            int n = rand.nextInt(100) + 1;
-            eData.add(i, new ExerciseEntryData(i + 1, "Filler", n));
+            eData.add(i, new ExerciseEntryData(date, i + 1, "Filler", rand.nextInt(100) + 1));
         }
 
         // Setting up / Intialising Recyclerview and Adapter
@@ -60,7 +63,7 @@ public class TrackerFragment extends Fragment {
            public void onClick(View v) {
 //               int position = recyclerView.getAdapter().getItemCount();
                int position = eData.size();
-               ExerciseEntryData newEntry = new ExerciseEntryData(position + 1, "New Entry " + (int)(position+1), rand.nextInt(100) + 1);
+               ExerciseEntryData newEntry = new ExerciseEntryData(date, position + 1, "New Entry " + (position+1), rand.nextInt(100) + 1);
                eData.add(newEntry);
                adapter.notifyItemInserted(eData.size() - 1);
            }

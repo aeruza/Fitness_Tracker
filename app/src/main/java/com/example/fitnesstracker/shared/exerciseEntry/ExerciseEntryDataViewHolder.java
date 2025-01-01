@@ -11,12 +11,14 @@ import com.example.fitnesstracker.R;
 
 public class ExerciseEntryDataViewHolder extends RecyclerView.ViewHolder {
 
+    public TextView date;
     public TextView index;
     public TextView exerciseName;
     public TextView total;
 
     public ExerciseEntryDataViewHolder(@NonNull View view) {
         super(view);
+        date = (TextView)view.findViewById(R.id.exercise_entry_date);
         index = (TextView)view.findViewById(R.id.exercise_entry_index);
         exerciseName = (TextView)view.findViewById(R.id.exercise_entry_name);
         total = (TextView)view.findViewById(R.id.exercise_entry_total);

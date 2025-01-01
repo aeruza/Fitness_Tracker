@@ -27,7 +27,7 @@ private FragmentTrackerBinding binding;
         return root;
     }
 
-@Override
+    @Override
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;

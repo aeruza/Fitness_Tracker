@@ -9,18 +9,13 @@
 
     <TextView
         android:id="@+id/text_dashboard"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:text="Dashboard"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        android:layout_marginTop="16dp"
+        android:text="@string/dashboard_title"
+        style="@style/TextAppearance.MaterialComponents.Headline5"
+        app:layout_constraintStart_toStartOf="@id/dashboard_card_1"
+        app:layout_constraintTop_toTopOf="parent"/>
 
 <!--    Can implement swipe the card to see the next granularity in the future
         - Where you can Swipe between Overall / Daily / Weekly / Monthly -->
@@ -34,7 +29,7 @@
         app:cardCornerRadius="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/dashboard_card_2"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/text_dashboard">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:padding="12dp"
@@ -46,13 +41,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:src="@drawable/pushup"
+                android:background="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/dashboard_card_title_1"
-                style="@style/TextAppearance.MaterialComponents.Headline5"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
@@ -96,7 +92,7 @@
         app:cardCornerRadius="16dp"
         app:layout_constraintStart_toEndOf="@+id/dashboard_card_1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/text_dashboard">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:padding="12dp"
@@ -108,13 +104,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:src="@drawable/squats"
+                android:background="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/dashboard_card_title_2"
-                style="@style/TextAppearance.MaterialComponents.Headline5"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"

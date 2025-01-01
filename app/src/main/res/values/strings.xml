@@ -7,4 +7,5 @@
     <!--  Dashboard Resources  -->
     <string name="card_push_ups"><u>Push-Ups</u></string>
     <string name="card_squats"><u>Squats</u></string>
+    <string name="dashboard_title"><u><i>Dashboard</i></u></string>
 </resources>

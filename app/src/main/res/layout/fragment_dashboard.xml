@@ -7,11 +7,13 @@
     android:layout_height="match_parent"
     tools:context=".ui.dashboard.DashboardFragment" >
 
-    <!--    Can implement swipe the card to see the next granularity in the future
-        - Where you can Swipe between Overall / Daily / Weekly / Monthly -->
-
+    <!--  Create the cards as objects which can be created from a factory based
+        on button click   -->
+    <!--  Can implement swipe the card to see the next granularity in the future
+        Where you can Swipe between Overall / Daily / Weekly / Monthly -->
     <!--  Group 2 Side by Side Cards into a RecyclerViewObject then allow
-      Scrolling of the cards for future added exercises -->
+        Scrolling of the cards for future added exercises -->
+
     <androidx.cardview.widget.CardView
         android:id="@+id/dashboard_card_1"
         android:layout_width="0dp"

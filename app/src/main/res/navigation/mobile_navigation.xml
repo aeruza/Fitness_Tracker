@@ -15,11 +15,25 @@
         android:id="@+id/navigation_tracker"
         android:name="com.example.fitnesstracker.ui.tracker.TrackerFragment"
         android:label="@string/title_tracker"
-        tools:layout="@layout/fragment_tracker" />
+        tools:layout="@layout/fragment_tracker" >
+        <action
+            android:id="@+id/action_navigation_tracker_to_navigation_form_add_pushups"
+            app:destination="@id/navigation_form_add_pushups" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_stats"
         android:name="com.example.fitnesstracker.ui.stats.StatsFragment"
         android:label="@string/title_stats"
         tools:layout="@layout/fragment_stats" />
+
+    <fragment
+        android:id="@+id/navigation_form_add_pushups"
+        android:name="com.example.fitnesstracker.ui.tracker.AddPushUpFormFragment"
+        android:label="Form"
+        tools:layout="@layout/form_add_pushup" >
+        <action
+            android:id="@+id/action_navigation_form_add_pushups_to_navigation_tracker"
+            app:destination="@id/navigation_tracker" />
+    </fragment>
 </navigation>

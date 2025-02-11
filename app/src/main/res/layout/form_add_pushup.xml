@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.tracker.AddPushUpFormFragment">
+
+    <!-- Input fields for adding pushups -->
+    <EditText
+        android:id="@+id/et_num_pushups"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Number of Pushups"
+        android:inputType="number"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp" />
+
+<!--  Add Date Picker Here  -->
+
+    <Button
+        android:id="@+id/btn_add_pushups"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Pushups"
+        app:layout_constraintTop_toBottomOf="@id/et_num_pushups"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

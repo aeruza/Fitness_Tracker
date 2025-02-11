@@ -5,13 +5,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.fitnesstracker.Globals;
+import com.example.fitnesstracker.R;
 import com.example.fitnesstracker.databinding.FragmentTrackerBinding;
 import com.example.fitnesstracker.shared.exerciseEntry.ExerciseEntryData;
 import com.example.fitnesstracker.shared.exerciseEntry.ExerciseEntryDataAdapter;
@@ -28,14 +33,26 @@ public class TrackerFragment extends Fragment {
     String date = new SimpleDateFormat("dd-MM-yyyy, hh:mm", Locale.getDefault()).format(new Date());
 
     private FragmentTrackerBinding binding;
+    private NavController navController;
+
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState){
+        super.onViewCreated(view,savedInstanceState);
+        navController = Navigation.findNavController(view);
+    }
 
     public View onCreateView(@NonNull LayoutInflater inflater,
             ViewGroup container, Bundle savedInstanceState) {
         TrackerViewModel trackerViewModel =
             new ViewModelProvider(this).get(TrackerViewModel.class);
 
+
         binding = FragmentTrackerBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
+        TextView totalPushups = binding.trackerTextView;
+        totalPushups.setText("Total: " + Globals.totalPushups);
 
         Random rand = new Random();
         int i;
@@ -61,11 +78,13 @@ public class TrackerFragment extends Fragment {
         addButton.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
+               // Show the form to input number of pushups
+               navController.navigate(R.id.navigation_form_add_pushups);
 //               int position = recyclerView.getAdapter().getItemCount();
-               int position = eData.size();
-               ExerciseEntryData newEntry = new ExerciseEntryData(date, position + 1, "New Entry " + (position+1), rand.nextInt(100) + 1);
-               eData.add(newEntry);
-               adapter.notifyItemInserted(eData.size() - 1);
+//               int position = eData.size();
+//               ExerciseEntryData newEntry = new ExerciseEntryData(date, position + 1, "New Entry " + (position+1), rand.nextInt(100) + 1);
+//               eData.add(newEntry);
+//               adapter.notifyItemInserted(eData.size() - 1);
            }
         });
         return root;

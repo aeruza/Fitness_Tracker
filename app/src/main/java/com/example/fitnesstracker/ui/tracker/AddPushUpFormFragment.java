@@ -21,7 +21,6 @@ import org.jetbrains.annotations.Nullable;
 public class AddPushUpFormFragment extends Fragment {
 
     private EditText etAddPushups, etPortionSize;
-    private Button btnAddPushups;
     private NavController navController;
 
     @Override
@@ -37,7 +36,7 @@ public class AddPushUpFormFragment extends Fragment {
 
         // Initialize UI elements
         etAddPushups = view.findViewById(R.id.et_num_pushups);
-        btnAddPushups = view.findViewById(R.id.btn_add_pushups);
+        Button btnAddPushups = view.findViewById(R.id.btn_add_pushups);
 
         // Button click logic for adding a meal
         btnAddPushups.setOnClickListener(v -> addPushups());
